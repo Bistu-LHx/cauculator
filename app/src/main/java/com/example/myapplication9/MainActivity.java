@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button_2:
             case R.id.button_3:
             case R.id.button_4:
-
+            case R.id.button_5:
 
 
 
