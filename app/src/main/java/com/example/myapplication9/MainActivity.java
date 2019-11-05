@@ -3,6 +3,8 @@ package com.example.myapplication9;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,16 +27,46 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button_4:
             case R.id.button_5:
             case R.id.button_6:
+            case R.id.button_7:
+            case R.id.button_8:
+            case R.id.button_9:
+            case R.id.button_dot:
+            case R.id.button_CircleLeft:
+            case R.id.button_CircleRight:
 
+            case R.id.button_add:
+            case R.id.button_sub:
+            case R.id.button_mul:
+            case R.id.button_div:
+            case R.id.button_sin:
+            case R.id.button_cos:
+            case R.id.button_tan:
+            {
+                Button btn = (Button) view;
+                String strAdded = btn.getText().toString();
+                TextView formula =(TextView) findViewById(R.id.formula_area);
+                String strContent = formula.getText().toString();
+                String strNewContent =strContent+strAdded;
+                formula.setText(strNewContent);
+            }
+            break;
+            case R.id.button_equ:
+            {
+                TextView formula =(TextView) findViewById(R.id.formula_area);
+                formula.setText("");
+                TextView result =(TextView) findViewById(R.id.result_area);
+                formula.setText("");
+            }
+            break;
+            case R.id.button_c:{
 
+            }
+            break;
+            case R.id.button_DEC:
+            {
 
-
-
-
-
-
-
-
+            }
+            break;
         }
     }
 }

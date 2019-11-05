@@ -20,7 +20,7 @@
             android:background="#FF0000FF"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/fomula_area"
+            android:id="@+id/formula_area"
             android:onClick="onClick"
             android:layout_width="match_parent"
             android:layout_height="0dp"
