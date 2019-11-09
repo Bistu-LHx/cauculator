@@ -10,18 +10,35 @@ import android.widget.Toast;
 import org.javia.arity.Symbols;
 import org.javia.arity.SyntaxException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private TextView equationText,resultText;
+    private Button buttons[] = new Button[26];
+    private CheckInput checkInput;
+    private CounterByEquation counterByEquation;
+    private String equation = "";
+
+    private int buttonIds[] = new int[]{
+            R.id.button_0,R.id.button_1,R.id.button_2,R.id.button_3,R.id.button_4,R.id.button_5,R.id.button_6,
+            R.id.button_7,R.id.button_8,R.id.button_9,R.id.button_dot,R.id.button_CircleLeft,R.id.button_CircleRight,
+            R.id.button_add,R.id.button_sub,R.id.button_mul,R.id.button_div,R.id.button_sin,R.id.button_cos,
+            R.id.button_tan,R.id.button_c,R.id.button_DEC,R.id.button_trans2,R.id.button_trans8,R.id.button_trans16,
+            R.id.button_equ
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_1);
+        init();
     }
 
-    public void onClick(View view) {
-        //控制逻辑代码
-        //Toast.makeText(this, "=", Toast.LENGTH_SHORT).show();
-        switch (view.getId()) {
+
+    @Override
+    public void onClick(View v){
+        int id = v.getId();
+        Button button = (Button)findViewById(id);
+        String text = button.getText().toString();
+        switch (id){
             case R.id.button_0:
             case R.id.button_1:
             case R.id.button_2:
@@ -32,66 +49,86 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button_7:
             case R.id.button_8:
             case R.id.button_9:
-            case R.id.button_dot:
-            case R.id.button_CircleLeft:
-            case R.id.button_CircleRight:
+                checkInput.setEquation(equation);
+                if(checkInput.checkNumberInput()){
+                    equation = checkInput.getEquation();
+                    equation += text;
+                }
+                break;
+
 
             case R.id.button_add:
             case R.id.button_sub:
             case R.id.button_mul:
             case R.id.button_div:
-            case R.id.button_sin:
-            case R.id.button_cos:
-            case R.id.button_tan: {
-                Button btn = (Button) view;
-                String strAdded = btn.getText().toString();
-                TextView formula = (TextView) findViewById(R.id.formula_area);
-                String strContent = formula.getText().toString();
-                String strNewContent = strContent + strAdded;
-                formula.setText(strNewContent);
-            }
-            break;
-            case R.id.button_c: {
-                TextView formula = (TextView) findViewById(R.id.formula_area);
-                formula.setText("");
-                TextView result = (TextView) findViewById(R.id.result_area);
-                result.setText("");
-            }
-            break;
+                checkInput.setEquation(equation);
+                if(checkInput.checkOperationsInput()){
+                    equation = checkInput.getEquation();
+                    equation += text;
+                }
+                break;
             case R.id.button_DEC: {
-                TextView formula = (TextView) findViewById(R.id.formula_area);
-                String StrContent = formula.getText().toString();
-                if (StrContent.length() > 0) {
-                    StrContent = StrContent.substring(0, StrContent.length() - 1);
-                    formula.setText(StrContent);
-                }
+                checkInput.setEquation(equation);
+                checkInput.backSpace();
+                equation = checkInput.getEquation();
 
             }
             break;
-            case R.id.button_equ: {
-                TextView formula = (TextView) findViewById(R.id.formula_area);
-                String StrContent = formula.getText().toString();
-                try {
-                    Symbols s = new Symbols();
-                    double res = s.eval(StrContent);
 
-                    TextView result = (TextView) findViewById(R.id.result_area);
-                    result.setText(String.valueOf(res));
-                    formula.setText("");
-                } catch (SyntaxException e) {
-                    Toast.makeText(this, "Error!", Toast.LENGTH_LONG).show();
-
-                }
-
+            case R.id.button_CircleLeft:{
+                checkInput.setEquation(equation);
+                if(checkInput.checkLBracketInput())
+                    equation+="(";
                 break;
 
             }
-            case R.id.button_trans2:
-            case R.id.button_trans8:
-            case R.id.button_trans16: {
+
+            case R.id.button_CircleRight:{
+                checkInput.setEquation(equation);
+                if(checkInput.checkRBracketInput())
+                    equation+=')';
+                break;
+                }
+
+
+            case R.id.button_c: {
+                equation = "";
+                resultText.setText("");
+
 
             }
             break;
+
+
+            case R.id.button_dot:
+                checkInput.setEquation(equation);
+                if(checkInput.checkPointInput()){
+                    equation = checkInput.getEquation();
+                    equation+=text;
+                }
+                break;
+
+            case R.id.button_equ:
+                resultText.setText(new CounterByEquation(equation).solveEquation());
+                break;
+
         }
+        equationText.setText(equation);
     }
+    void init(){
+
+        int length = buttons.length;
+        for(int i=0;i<length;i++){
+
+            buttons[i] = (Button)findViewById(buttonIds[i]);
+            buttons[i].setOnClickListener(this);
+        }
+        equationText = (TextView)findViewById(R.id.formula_area);
+        resultText = (TextView)findViewById(R.id.result_area);
+        checkInput = new CheckInput();
+        counterByEquation = new CounterByEquation(equation);
+    }
+
+
+
 }
