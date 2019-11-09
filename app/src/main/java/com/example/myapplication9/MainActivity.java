@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.javia.arity.Symbols;
-import org.javia.arity.SyntaxException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
