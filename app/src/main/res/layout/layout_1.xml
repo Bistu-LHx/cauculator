@@ -36,7 +36,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#FF00FF00"
+
         android:layout_weight="3"
         android:orientation="horizontal">
 
@@ -44,9 +44,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="#d468cb">
+            >
             <TableRow android:layout_weight="1"
-                android:background="#57ccf7">
+                >
                 <Button
                     android:id="@+id/button_c"
                     android:onClick="onClick"
@@ -74,7 +74,7 @@
                     android:textSize="25sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#e7e12b">
+               >
                 <Button
                     android:id="@+id/button_help"
                     android:onClick="onClick"
@@ -110,7 +110,7 @@
                     android:textSize="20sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#e7e12b">
+                >
                 <Button
                     android:id="@+id/button_sin"
                     android:onClick="onClick"
@@ -137,7 +137,7 @@
                     android:textSize="25sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#1de473">
+                >
                 <Button
                     android:id="@+id/button_7"
                     android:onClick="onClick"
@@ -164,7 +164,7 @@
                     android:textSize="25sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#e07ee6">
+               >
                 <Button
                     android:id="@+id/button_4"
                     android:onClick="onClick"
@@ -191,7 +191,7 @@
                     android:textSize="25sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#ef3426">
+                >
                 <Button
                     android:id="@+id/button_1"
                     android:onClick="onClick"
@@ -218,7 +218,7 @@
                     android:textSize="25sp"/>
             </TableRow>
             <TableRow android:layout_weight="1"
-                android:background="#ce6e0e">
+                >
                 <Button
                     android:id="@+id/button_0"
                     android:onClick="onClick"
@@ -244,7 +244,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#edb15c"
+
             android:orientation="vertical">
             <Button
                 android:id="@+id/button_DEC"

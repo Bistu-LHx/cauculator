@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_weight="4"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,7 +41,7 @@
 
     </LinearLayout>
     <LinearLayout
-
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -73,9 +74,11 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="4"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <EditText
             android:layout_weight="1"
@@ -83,24 +86,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="转化2进制结果为"/>
+
         <EditText
-            android:layout_weight="1"
             android:id="@+id/R8text"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="转化8进制结果为"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="转化8进制结果为" />
         <EditText
             android:id="@+id/R16text"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="转化16进制结果为" />
         <EditText
             android:layout_weight="1"
             android:id="@+id/R10text"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="转化10进制结果为"/>
+            android:layout_height="wrap_content"
+            android:hint="转化10进制结果为"
+            />
 
 
 

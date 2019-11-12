@@ -1,6 +1,7 @@
 package com.example.myapplication9;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_1);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
         init();
     }
 
@@ -170,8 +173,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i=0;i<length;i++){
 
             buttons[i] = (Button)findViewById(buttonIds[i]);
-            buttons[i].setOnClickListener(this);
+
         }
+
+
+        buttons[0].setOnClickListener(this);
+        buttons[1].setOnClickListener(this);
+        buttons[2].setOnClickListener(this);
+        buttons[3].setOnClickListener(this);
+        buttons[4].setOnClickListener(this);
+        buttons[5].setOnClickListener(this);
+        buttons[6].setOnClickListener(this);
+        buttons[7].setOnClickListener(this);
+        buttons[8].setOnClickListener(this);
+        buttons[9].setOnClickListener(this);
+        buttons[10].setOnClickListener(this);
+        buttons[11].setOnClickListener(this);
+        buttons[12].setOnClickListener(this);
+        buttons[13].setOnClickListener(this);
+        buttons[14].setOnClickListener(this);
+        buttons[15].setOnClickListener(this);
+        buttons[16].setOnClickListener(this);
+        buttons[16].setOnClickListener(this);
+        buttons[17].setOnClickListener(this);
+        buttons[18].setOnClickListener(this);
+        buttons[19].setOnClickListener(this);
+        buttons[20].setOnClickListener(this);
+        buttons[21].setOnClickListener(this);
+        buttons[22].setOnClickListener(this);
+        buttons[23].setOnClickListener(this);
+        buttons[24].setOnClickListener(this);
+        buttons[25].setOnClickListener(this);
+        buttons[26].setOnClickListener(this);
+
+
+
         formulaText = (TextView)findViewById(R.id.formula_area);
         resultText = (TextView)findViewById(R.id.result_area);
         checkInput = new CheckInput();
