@@ -1,5 +1,6 @@
 package com.example.myapplication9;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,18 +10,20 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView equationText,resultText;
-    private Button buttons[] = new Button[26];
+    private TextView formulaText,resultText;
+    private Button buttons[] = new Button[27];
     private CheckInput checkInput;
     private CounterByEquation counterByEquation;
     private String equation = "";
+
+    double num2,num1,result;
 
     private int buttonIds[] = new int[]{
             R.id.button_0,R.id.button_1,R.id.button_2,R.id.button_3,R.id.button_4,R.id.button_5,R.id.button_6,
             R.id.button_7,R.id.button_8,R.id.button_9,R.id.button_dot,R.id.button_CircleLeft,R.id.button_CircleRight,
             R.id.button_add,R.id.button_sub,R.id.button_mul,R.id.button_div,R.id.button_sin,R.id.button_cos,
-            R.id.button_tan,R.id.button_c,R.id.button_DEC,R.id.button_trans2,R.id.button_trans8,R.id.button_trans16,
-            R.id.button_equ
+            R.id.button_tan,R.id.button_c,R.id.button_DEC,R.id.button_help,R.id.button_tiji,R.id.button_changdu,
+            R.id.button_equ,R.id.button_trans
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,13 +107,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     equation+=text;
                 }
                 break;
+            case R.id.button_sin: {
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Math.toRadians(Double.parseDouble(formulaText.getText().toString()));
+                resultText.setText(String.valueOf(Math.sin(a)));
+                break;
+
+            }
+
+            case R.id.button_cos: {
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Math.toRadians(Double.parseDouble(formulaText.getText().toString()));
+                resultText.setText(String.valueOf(Math.cos(a)));
+                break;
+
+            }
+
+            case R.id.button_tan: {
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Math.toRadians(Double.parseDouble(formulaText.getText().toString()));
+                resultText.setText(String.valueOf(Math.tan(a)));
+                break;
+
+            }
+
+            case R.id.button_help: {
+                Intent intent =new Intent(MainActivity.this,FifthActivity.class);
+                startActivity(intent);
+                break;
+
+            }
+
+            case R.id.button_tiji: {
+                Intent intent =new Intent(MainActivity.this,FourthActivity.class);
+                startActivity(intent);
+                break;
+
+            }
+
+            case R.id.button_changdu: {
+                Intent intent =new Intent(MainActivity.this,ThirdActivity.class);
+                startActivity(intent);
+                break;
+
+            }
 
             case R.id.button_equ:
                 resultText.setText(new CounterByEquation(equation).solveEquation());
                 break;
+            case R.id.button_trans:{
+                Intent intent =new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
+                break;
+            }
 
         }
-        equationText.setText(equation);
+        formulaText.setText(equation);
     }
     void init(){
 
@@ -120,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             buttons[i] = (Button)findViewById(buttonIds[i]);
             buttons[i].setOnClickListener(this);
         }
-        equationText = (TextView)findViewById(R.id.formula_area);
+        formulaText = (TextView)findViewById(R.id.formula_area);
         resultText = (TextView)findViewById(R.id.result_area);
         checkInput = new CheckInput();
         counterByEquation = new CounterByEquation(equation);

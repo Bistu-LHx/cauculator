@@ -78,6 +78,7 @@ public class CounterByEquation {
                     if(tmp.equals("(")) break;
                     else queue[count++] = tmp;
                 }
+                length=length-2;
             }
             else{  //数字
                 String numStr = curChar+"";
@@ -136,14 +137,19 @@ public class CounterByEquation {
                     second = Double.parseDouble(queue[i-1]);
                 if (member.equals("+")) first += second;
                 if (member.equals("-")){
-                    //处理  x^(-1)的情况
-                    if(queue[i+1].equals("^")){
-                        first = 1 / first;
-                        //为了不影响接下来的运算，在数组去除^
-                        for(int j = i+1;j<count-1;j++)
-                            queue[j] = queue[j+1];
-                        count--;
-                    }else{
+                    if(length!=i+1) {
+                        //处理  x^(-1)的情况
+                        if (queue[i + 1].equals("^")) {
+                            first = 1 / first;
+                            //为了不影响接下来的运算，在数组去除^
+                            for (int j = i + 1; j < count - 1; j++)
+                                queue[j] = queue[j + 1];
+                            count--;
+                        } else {
+                            first -= second;
+                        }
+                    }
+                    else {
                         first -= second;
                     }
                 }
@@ -170,3 +176,4 @@ public class CounterByEquation {
     }
 
 }
+

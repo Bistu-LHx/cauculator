@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/C10text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入10进制数"/>
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/C2text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入2进制数"/>
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/C8text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入8进制数"/>
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/C16text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入16进制数"/>
+
+
+
+</LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/C10toOther"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10转其他"/>
+        <Button
+            android:id="@+id/C2to10"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2—>10"/>
+        <Button
+            android:id="@+id/C8to10"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8—>10"/>
+        <Button
+            android:id="@+id/C16to10"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16—>10"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/R2text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化2进制结果为"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/R8text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="转化8进制结果为"/>
+        <EditText
+            android:id="@+id/R16text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="转化16进制结果为" />
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/R10text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="转化10进制结果为"/>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
