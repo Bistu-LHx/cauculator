@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/cm3text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入cm³"/>
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/dm3text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入dm³"/>
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/m3text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入m³"/>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/CM3toOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="cm³—>其它" />
+
+                <Button
+                    android:id="@+id/DM3toOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="dm³—>其它" />
+
+                <Button
+                    android:id="@+id/M3toOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="m³—>其它" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/resDM3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化dm³进制结果为"/>
+
+        <EditText
+            android:id="@+id/resCM3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="转化cm³进制结果为" />
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/resM3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化m³进制结果为"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

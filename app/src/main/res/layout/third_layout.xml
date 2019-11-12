@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/cmtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入长度cm"/>
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/mtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入长度m"/>
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/kmtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入长度km"/>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/CMtoOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="cm—>其它" />
+
+                <Button
+                    android:id="@+id/MtoOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="m—>其它" />
+
+                <Button
+                    android:id="@+id/KMtoOther"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="km—>其它" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/resCM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化CM进制结果为"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/resM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化M进制结果为"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/resKM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="转化KM进制结果为"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
