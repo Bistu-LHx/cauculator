@@ -32,23 +32,23 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
                 formulaText2=findViewById(R.id.cmtext);
                 double a=Double.parseDouble(formulaText2.getText().toString());
                 resultTextcm.setText("");
-                resultTextm.setText("转化为m："+String.valueOf(a*0.1));
-                resultTextkm.setText("转化为km："+String.valueOf(a*0.01));
+                resultTextm.setText("转化为m："+String.valueOf(a*0.01));
+                resultTextkm.setText("转化为km："+String.valueOf(a*0.00001));
                 break;
             }
             case R.id.MtoOther:{
                 formulaText2=findViewById(R.id.mtext);
                 double a=Double.parseDouble(formulaText2.getText().toString());
-                resultTextcm.setText("转化为cm："+String.valueOf(a*10));
+                resultTextcm.setText("转化为cm："+String.valueOf(a*100));
                 resultTextm.setText("");
-                resultTextkm.setText("转化为km："+String.valueOf(a*0.1));
+                resultTextkm.setText("转化为km："+String.valueOf(a*0.001));
                 break;
             }
             case R.id.KMtoOther:{
                 formulaText2=findViewById(R.id.kmtext);
                 double a=Double.parseDouble(formulaText2.getText().toString());
-                resultTextcm.setText("转化为cm："+String.valueOf(a*100));
-                resultTextm.setText("转化为m："+String.valueOf(a*10));
+                resultTextcm.setText("转化为cm："+String.valueOf(a*100000));
+                resultTextm.setText("转化为m："+String.valueOf(a*1000));
                 resultTextkm.setText("");
                 break;
             }

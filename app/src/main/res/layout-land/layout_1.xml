@@ -244,6 +244,7 @@
                     android:width="0dp"
                     android:layout_height="match_parent"
                     android:text="0"
+                    android:textSize="10dp"
                     />
                 <Button
                     android:id="@+id/button_dot"
@@ -251,7 +252,8 @@
                     android:layout_weight="1"
                     android:width="0dp"
                     android:layout_height="match_parent"
-                    android:text="."
+                    android:text="·"
+                    android:textSize="15dp"
                     />
 
             </TableRow>

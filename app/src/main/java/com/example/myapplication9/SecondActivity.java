@@ -50,26 +50,30 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             {formulaText1= (EditText)findViewById(R.id.C8text);
                 String a=formulaText1.getText().toString();
                 resultText10.setText("10进制："+Integer.valueOf(a,8).toString() );
-                resultText2.setText("");
+                int b=Integer.valueOf(a,8);
+                resultText2.setText("2进制："+String.valueOf(Integer.toBinaryString(b)));
                 resultText8.setText("");
-                resultText16.setText("");
+                resultText16.setText("16进制："+String.valueOf(Integer.toHexString(b)));
                 break;
             }
             case  R.id.C2to10:
             {formulaText1= (EditText)findViewById(R.id.C2text);
                 String a=formulaText1.getText().toString();
                 resultText10.setText("10进制："+Integer.valueOf(a,2).toString() );
+                int b=Integer.valueOf(a,2);
+
                 resultText2.setText("");
-                resultText8.setText("");
-                resultText16.setText("");
+                resultText8.setText("8进制："+String.valueOf(Integer.toOctalString(b)));
+                resultText16.setText("16进制："+String.valueOf(Integer.toHexString(b)));
                 break;
             }
             case  R.id.C16to10:
             {formulaText1= (EditText)findViewById(R.id.C16text);
                 String a=formulaText1.getText().toString();
                 resultText10.setText("10进制："+Integer.valueOf(a,16).toString() );
-                resultText2.setText("");
-                resultText8.setText("");
+                int b=Integer.valueOf(a,16);
+                resultText2.setText("2进制："+String.valueOf(Integer.toBinaryString(b)));
+                resultText8.setText("8进制："+String.valueOf(Integer.toOctalString(b)));
                 resultText16.setText("");
                 break;
             }
