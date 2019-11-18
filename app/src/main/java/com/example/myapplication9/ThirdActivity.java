@@ -35,6 +35,7 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
                 resultTextm.setText("转化为m："+String.valueOf(a*0.01));
                 resultTextkm.setText("转化为km："+String.valueOf(a*0.00001));
                 break;
+
             }
             case R.id.MtoOther:{
                 formulaText2=findViewById(R.id.mtext);
