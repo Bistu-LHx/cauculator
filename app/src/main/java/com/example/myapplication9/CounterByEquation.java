@@ -78,7 +78,7 @@ public class CounterByEquation {
                     if(tmp.equals("(")) break;
                     else queue[count++] = tmp;
                 }
-                length=length-2;
+                //length=length-2;
             }
             else{  //数字
                 String numStr = curChar+"";

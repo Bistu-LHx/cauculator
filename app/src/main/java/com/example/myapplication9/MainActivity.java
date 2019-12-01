@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView formulaText,resultText;
-    private Button buttons[] = new Button[27];
+    private Button buttons[] = new Button[30];
     private CheckInput checkInput;
     private CounterByEquation counterByEquation;
     private String equation = "";
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             R.id.button_7,R.id.button_8,R.id.button_9,R.id.button_dot,R.id.button_CircleLeft,R.id.button_CircleRight,
             R.id.button_add,R.id.button_sub,R.id.button_mul,R.id.button_div,R.id.button_sin,R.id.button_cos,
             R.id.button_tan,R.id.button_c,R.id.button_DEC,R.id.button_help,R.id.button_tiji,R.id.button_changdu,
-            R.id.button_equ,R.id.button_trans
+            R.id.button_equ,R.id.button_trans,R.id.lifang,R.id.button_pingfang,R.id.button_kaifang
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +133,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             }
+            case R.id.button_pingfang:{
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Double.parseDouble(formulaText.getText().toString());
+                resultText.setText(String.valueOf(Math.pow(a,2)));
+                break;
+            }
+            case R.id.button_kaifang:{
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Double.parseDouble(formulaText.getText().toString());
+                resultText.setText(String.valueOf(Math.sqrt(a)));
+                break;
+            }
+            case R.id.lifang:{
+                formulaText= (TextView)findViewById(R.id.formula_area);
+                double a=Double.parseDouble(formulaText.getText().toString());
+                resultText.setText(String.valueOf(Math.pow(a,3)));
+                break;
+            }
 
             case R.id.button_help: {
                 Intent intent =new Intent(MainActivity.this,FifthActivity.class);
@@ -205,6 +223,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttons[24].setOnClickListener(this);
         buttons[25].setOnClickListener(this);
         buttons[26].setOnClickListener(this);
+        buttons[27].setOnClickListener(this);
+        buttons[28].setOnClickListener(this);
+        buttons[29].setOnClickListener(this);
 
 
 
